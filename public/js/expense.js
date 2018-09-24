@@ -1,4 +1,4 @@
-window.onload=function(){
+window.onload = function () {
   // Getting references to the name, date and cost inputs and expense container, as well as the table body
   var nameInput = $('#expense-name');
   var costInput = $('#expense-cost');
@@ -68,7 +68,7 @@ window.onload=function(){
 
   // Function for retrieving expenses and getting them ready to be rendered to the page
   function getExpenses() {
-    $.get('/api/expenses', function(data) {
+    $.get('/api/expenses', function (data) {
       var rowsToAdd = [];
       for (var i = 0; i < data.length; i++) {
         var expNum = data[i].cost;
@@ -80,8 +80,8 @@ window.onload=function(){
       costInput.val('');
       dateInput.val('');
       console.log(sum);
-      console.log(sum/monthCycle);
-      console.log(sum%monthCycle);
+      console.log(sum / monthCycle);
+      console.log(sum % monthCycle);
     });
   }
 
@@ -101,14 +101,14 @@ window.onload=function(){
     method: 'GET',
     datatype: 'json',
     data: {
-      '$where' : "start_date_time > '" + moment().subtract(31, 'days').format('YYYY-MM-DDT00:00:00') + "'",
-      'city' : 'Portland',
-      '$order' : 'start_date_time DESC'
+      '$where': "start_date_time > '" + moment().subtract(31, 'days').format('YYYY-MM-DDT00:00:00') + "'",
+      'city': 'brownsville',
+      '$order': 'start_date_time DESC'
     }
-  }).done(function(response) {
-  // Parse our events into an event object for FullCalendar
+  }).done(function (response) {
+    // Parse our events into an event object for FullCalendar
     var events = [];
-    $.each(response, function(idx, e) {
+    $.each(response, function (idx, e) {
       events.push({
         start: e.start_date_time,
         end: e.end_date_time,
@@ -139,4 +139,3 @@ window.onload=function(){
       .then(getExpenses);
   }
 };
-

@@ -1,4 +1,4 @@
-window.onload=function(){
+window.onload = function () {
   // Getting jQuery references to the post body, title, form, and expense select
   var bodyInput = $('#body');
   var titleInput = $('#title');
@@ -57,7 +57,7 @@ window.onload=function(){
 
   // Submits a new post and brings user to blog page upon completion
   function submitPost(post) {
-    $.post('/api/posts', post, function() {
+    $.post('/api/posts', post, function () {
       window.location.href = '/blog';
     });
   }
@@ -75,7 +75,7 @@ window.onload=function(){
     default:
       return;
     }
-    $.get(queryUrl, function(data) {
+    $.get(queryUrl, function (data) {
       if (data) {
         console.log(data.ExpenseId || data.id);
         // If this post exists, prefill our cms forms with its data
@@ -127,7 +127,7 @@ window.onload=function(){
       url: '/api/posts',
       data: post
     })
-      .then(function() {
+      .then(function () {
         window.location.href = '/blog';
       });
   }

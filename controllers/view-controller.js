@@ -11,9 +11,9 @@ const db = require("../models");
 // Routes
 // =============================================================
 
-
+"TODO:|FIXME:"
 // Each of the below routes just handles the HTML page that the user gets sent to.
-
+//TODO translations
 
 
 router.get('/blog', renderBlog);
@@ -39,7 +39,9 @@ function renderBlog(req, res) {
     where: query,
     include: [db.Expense]
   }).then(function (posts) {
-    res.render('blog', { posts: posts })
+    res.render('blog', {
+      posts: posts
+    })
   });
 }
 

@@ -1,0 +1,385 @@
+* {
+    outline: 1px dashed red;
+}
+
+/*=============================================
+=           WORKFLOW          =
+=============================================*/
+/* 
+control + space trigger comments 
+control + shift + p CSS preview
+right click for go to options
+ICEBOX ANIMATE CSS
+"TODO:|FIXME:"
+ */
+
+
+/*=====  End of Section comment block  ======*/
+
+
+:root {
+    /* declare variables here... on :root pseudo-class */
+
+    /* colours */
+    --color-grey: rgba(220, 231, 235, 1);
+    --color-semi-black: rgba(48, 69, 92, 0.5);
+    --color-black: rgba(48, 69, 92, 1);
+    --color-white: rgba(255, 255, 255, 1);
+    --color-red: rgba(255, 104, 115, 1);
+    --color-blue: rgba(34, 190, 198, 1);
+
+    /* fonts */
+    --font-main: 'Josefin Sans', sans-serif;
+    --font-heading: 'Source Sans Pro', sans-serif;
+
+    /* font-sizes */
+    --size-normal: 1rem;
+    --size-mid: 1.5rem;
+    --size-big: 2rem;
+
+    /* font-weights */
+    --weight-normal: 500;
+    --weight-bold: 700;
+
+    /* padings */
+    --gapSmall: 1vh 1vw;
+    --gapMed: 2vh 2vw;
+    --gapLarge: 3vh 3vw;
+}
+
+/* GLOBALS ======================================================================================== */
+html {
+    width: 100%;
+    font-weight: bold;
+    height: 100%;
+    font-family: var(--font-main);
+    font-size: 1em;
+}
+
+body {
+    width: 100vw;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /* background-image: url(../img/chibg.jpg); */
+    background-size: cover;
+    background-repeat: repeat;
+}
+
+.flex-container {
+    display: flex;
+    margin: auto;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Lobster', cursive;
+}
+
+/* FIXED TOP BAR======================================================================================== */
+
+#top {
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+}
+
+#top>header {
+    position: fixed;
+    padding: 0.5rem;
+    top: 0;
+    width: 100vw;
+    border-bottom: 0.1vh solid rgba(245, 245, 245, 0.8);
+    background: rgba(229, 57, 53, 1);
+    display: inline-flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+}
+
+#top>header>nav>a {
+    font-size: 2rem;
+}
+
+.flex-container>button {
+    border: 0;
+    text-decoration: none;
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-weight: bold;
+    background: rgba(229, 57, 53, 1);
+    margin: 1rem;
+}
+
+/* CONTENT GLOBALS ELEMENTS====================================================================================================== */
+
+.topPad {
+    height: 10vh;
+}
+
+.content {
+    flex: 1 0 auto;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    word-break: break-word;
+    justify-self: center;
+    align-content: center;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/*             
+#contentPad {
+    align-content: stretch;
+    margin: auto;
+    padding: 2.5vw;
+    display: flex;
+    flex-flow: column wrap;
+} */
+
+#content {
+    display: flex;
+    flex-flow: row wrap;
+    overflow: none;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 2vh 2vw;
+    border-radius: 1rem;
+    width: 90vw;
+    align-content: center;
+}
+
+#content::nth-child(n+1) {
+    white-space: nowrap;
+    word-break: break-word;
+    padding: 2em;
+}
+
+.pad {
+    width: 100%;
+    background: solid rgba(245, 245, 245, 0.6);
+    display: flex;
+    flex-flow: row;
+    flex-wrap: nowrap;
+    margin: auto;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    border: 0.1vw solid rgba(245, 245, 245, 0.6);
+}
+
+/* CONTENT ELEMENTS====================================================================================================== */
+
+#form-control {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+#content>.flex-container>nav {
+    background: rgba(229, 57, 53, 0.8);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    /*     background: rgba(245, 245, 245, 0.8); */
+}
+
+#content>.flex-container>nav>a {
+    font-size: 1.5rem;
+}
+
+#content>.flex-container>p {
+    background: rgba(229, 57, 53, 0.8);
+    display: flex;
+    flex-flow: row wrap;
+    width: 80vw;
+    text-align: center;
+    border: 0.05rem solid rgba(245, 245, 245, 0.2);
+    border-radius: 0.1rem;
+    padding: 0.1rem;
+}
+
+#content>.flex-container>label>p {
+    background: rgba(229, 57, 53, 0.8);
+    display: flex;
+    flex-flow: row wrap;
+    width: 80vw;
+    text-align: center;
+    border: 0.05rem solid rgba(245, 245, 245, 0.8);
+    border-radius: 0.1rem;
+    padding: 0.1rem;
+}
+
+#content>.flex-container>input {
+    display: flex;
+    flex-flow: row wrap;
+    width: 80vw;
+    text-align: center;
+    border: 0.05rem solid rgba(245, 245, 245, 0.8);
+    border-radius: 0.1rem;
+    padding: 0.1rem;
+}
+
+.scoreMenu {
+    display: flex;
+    flex-flow: row wrap;
+    width: 80vw;
+    text-align: center;
+    border: 0.05rem solid rgba(245, 245, 245, 0.8);
+    border-radius: 0.1rem;
+    padding: 0.1rem;
+}
+
+/* FOOTER====================================================================================================== */
+
+.footer {
+    flex-shrink: 0;
+    display: flex;
+}
+
+footer {
+    display: flex;
+    flex-shrink: 0;
+    background: rgba(229, 57, 53, 0.8);
+    border-top: 0.1vh solid rgba(245, 245, 245, 0.8);
+}
+
+.footNav {
+    align-items: center;
+    align-items: space-around;
+    justify-content: center;
+    display: flex;
+    flex-flow: column wrap;
+    margin: auto;
+    text-align: center;
+}
+
+
+.footLink {
+    margin: 0.2rem;
+}
+
+.footLink:nth-child(2) {
+    border-radius: 50%;
+    font-family: inherit;
+    padding: 1vh;
+    border: 0.1rem solid whitesmoke;
+    font-size: 0.6rem;
+    color: whitesmoke;
+}
+
+.footLink:nth-child(1) {
+    font-size: 5vh;
+    border: transparent;
+    display: flex;
+    flex-grow: 0.4;
+    border-radius: 0.1rem;
+}
+
+.footLink:nth-child(1):hover {
+    border: 0.1rem solid black;
+}
+
+.footLink:hover {
+    background: rgba(255, 255, 255, 0.5);
+    color: black;
+}
+
+/*CSS SELECTORS =============================================================================================== */
+/* 
+https://css-tricks.com/almanac/selectors/
+
+
+
+    A
+        ::after / ::before
+        :active
+        :any-link
+        Adjacent sibling
+        [attribute]
+    B
+        :blank
+    C
+        :checked
+        Child
+        Class
+    D
+        :default
+        :dir()
+        :disabled
+        Descendant
+    E
+        :empty
+        :enabled
+    F
+        ::first-letter
+        ::first-line
+        :first-child
+        :first-of-type
+        :focus
+        :focus-within
+    G
+        General sibling
+    H
+        :hover
+    I
+        :in-range
+        :indeterminate
+        :invalid
+        :is()
+        ID
+    J
+    K
+    L
+        :lang()
+        :last-child
+        :last-of-type
+        :link
+    M
+        ::marker
+        :matches()
+    N
+        :not(s)
+        :nth-child
+        :nth-last-child
+        :nth-last-of-type
+        :nth-of-type
+    O
+        :only-child
+        :only-of-type
+        :optional
+        :out-of-range
+    P
+        ::placeholder
+        :placeholder-shown
+    Q
+    R
+        :read-write / :read-only
+        :required
+        :root
+    S
+        ::selection
+    T
+        :target
+        Type
+    U
+        :user-invalid
+        Universal
+    V
+        :valid
+        :visited
+    W
+    X
+    Y
+    Z
+
+
+*/

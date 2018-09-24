@@ -1,4 +1,4 @@
-window.onload=function(){
+window.onload = function () {
   /* global moment */
 
   // blogContainer holds all of our posts
@@ -11,13 +11,13 @@ window.onload=function(){
   // This function does an API call to delete posts
   function deletePost(id) {
     $.ajax({
-      method: "DELETE",
-      url: "/api/posts/" + id
-    })
-    .then(function() {
-      alert('post deleted!');
-      $(`[data-post=${id}]`).remove();
-    });
+        method: "DELETE",
+        url: "/api/posts/" + id
+      })
+      .then(function () {
+        alert('post deleted!');
+        $(`[data-post=${id}]`).remove();
+      });
   }
 
   // This function figures out which post we want to delete and then calls deletePost
@@ -45,9 +45,12 @@ window.onload=function(){
     }
     blogContainer.empty();
     var messageh2 = $("<h2>");
-    messageh2.css({ "text-align": "center", "margin-top": "50px" });
+    messageh2.css({
+      "text-align": "center",
+      "margin-top": "50px"
+    });
     messageh2.html("No posts yet" + partial + ", navigate <a href='/cms" + query +
-    "'>here</a> in order to get started.");
+      "'>here</a> in order to get started.");
     blogContainer.append(messageh2);
   }
 
