@@ -115,5 +115,23 @@
     "editor.formatOnType": true,
     "editor.fontWeight": "600",
     "typescript.useCodeSnippetsOnMethodSuggest": true,
-    "express.portNumber": 8080
+    // A list of vscode language names where the extension should be used.
+    "css_peek.activeLanguages": [
+        "html",
+    ],
+    // Controls the enablement.
+    "css_peek.enable": true,
+    // Files are ignored from the CSS lookup if they match any of these Regular Expressions (regex).
+    "css_peek.exclude": [
+        "node_modules",
+        "bower_components"
+    ],
+    // A list of extensions that should be tried for finding peeked files.
+    "css_peek.searchFileExtensions": [
+        ".css",
+    ],
+    // The universal selector (`*`) is known to be slow.
+    "css.lint.universalSelector": "ignore",
+    "html.format.indentHandlebars": true,
+    "debug.enableAllHovers": true,
 }
