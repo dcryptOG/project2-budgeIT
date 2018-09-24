@@ -49,22 +49,34 @@ ICEBOX ANIMATE CSS
 
 /* GLOBALS ======================================================================================== */
 html {
+    /* make sure we use up the whole viewport */
     width: 100%;
-    font-weight: bold;
     height: 100%;
+    font-weight: bold;
     font-family: var(--font-main);
     font-size: 1em;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
 }
 
 body {
-    width: 100vw;
-    margin: 0;
     display: flex;
-    flex-direction: column;
-    height: 100vh;
-    /* background-image: url(../img/chibg.jpg); */
+    flex-flow: column nowrap;
+    align-self: auto;
+    justify-self: auto;
+    margin: auto;
     background-size: cover;
     background-repeat: repeat;
+    width: 100vw;
+    height: 100vh;
 }
 
 .flex-container {
@@ -78,7 +90,8 @@ body {
 a {
     text-decoration: none;
     color: black;
-    font-family: 'Lobster', cursive;
+    font-family: var(--font-heading);
+    font-size: var(--size-normal);
 }
 
 /* FIXED TOP BAR======================================================================================== */
@@ -105,65 +118,45 @@ a {
 }
 
 #top>header>nav>a {
-    font-size: 2rem;
-}
-
-.flex-container>button {
-    border: 0;
-    text-decoration: none;
-    display: flex;
-    flex-wrap: nowrap;
-    padding: 0.5rem 1rem;
-    text-align: center;
-    font-family: 'Lobster', cursive;
-    font-weight: bold;
-    background: rgba(229, 57, 53, 1);
-    margin: 1rem;
+    font-size: var(--size-big);
+    font-family: var(--font-heading);
 }
 
 /* CONTENT GLOBALS ELEMENTS====================================================================================================== */
 
 .topPad {
-    height: 10vh;
+    height: 5vh;
+    margin: 5vh;
 }
 
 .content {
-    flex: 1 0 auto;
-    width: 100vw;
     display: flex;
-    flex-wrap: wrap;
+    flex: 1 1 auto;
+    flex-flow: column wrap;
+    align-self: stretch;
+    width: 100vw;
+    margin: auto;
+    padding: 0;
     word-break: break-word;
     justify-self: center;
-    align-content: center;
-    margin: 0 auto;
-    padding: 0;
+    align-content: stretch;
 }
 
-/*             
-#contentPad {
-    align-content: stretch;
-    margin: auto;
-    padding: 2.5vw;
-    display: flex;
-    flex-flow: column wrap;
-} */
+.content:nth-child(n) {
+    white-space: nowrap;
+    word-break: break-word;
+}
 
 #content {
     display: flex;
-    flex-flow: row wrap;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: auto;
     overflow: none;
-    justify-content: space-between;
-    margin: 0 auto;
-    padding: 2vh 2vw;
+    width: 95vw;
     border-radius: 1rem;
-    width: 90vw;
     align-content: center;
-}
-
-#content::nth-child(n+1) {
-    white-space: nowrap;
-    word-break: break-word;
-    padding: 2em;
 }
 
 .pad {
@@ -180,9 +173,105 @@ a {
 
 /* CONTENT ELEMENTS====================================================================================================== */
 
+/* .calendar {
+} */
+
+#calendar {
+    display: flex;
+    flex-flow: row wrap;
+    width: inherit;
+    margin: atuo;
+    padding: 0;
+}
+
+#calendar:first-child {
+    display: flex;
+    margin: 0;
+    flex-flow: column wrap;
+    width: inherit;
+}
+
+#calendar:nth-child(n) {
+    margin: 0;
+}
+
+table {
+    width: 90vw;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+thead,
+tr {
+    width: inherit;
+}
+
+thead,
+tr,
+th,
+    {
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+tbody,
+tr {
+    width: inherit;
+}
+
+tbody,
+tr,
+td,
+    {
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+th,
+td {
+    width: 14vw;
+}
+
+/**
+ *
+ * "TODO: calendar"
+ *
+/
+
+/**
+ *
+ * "TODO: FORM"
+ *
+ */
+
+
 #form-control {
     display: flex;
     flex-flow: column wrap;
+    flex: 1 0 auto;
+    margin: auto;
+}
+
+#expenseForm {
+    justify-content: space-between
+}
+
+.formItem {
+    flex-flow: column wrap;
+}
+
+/**
+ *
+ * "TODO: EXPENSE STATS"
+ *
+ */
+
+#statList {
+    display: flex;
+    flex-flow: column;
 }
 
 #content>.flex-container>nav {
@@ -228,7 +317,9 @@ a {
     padding: 0.1rem;
 }
 
-.scoreMenu {
+
+
+.cycleType {
     display: flex;
     flex-flow: row wrap;
     width: 80vw;
@@ -236,6 +327,19 @@ a {
     border: 0.05rem solid rgba(245, 245, 245, 0.8);
     border-radius: 0.1rem;
     padding: 0.1rem;
+}
+
+.flex-container>button {
+    border: 0;
+    text-decoration: none;
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-weight: bold;
+    background: rgba(229, 57, 53, 1);
+    margin: 1rem;
 }
 
 /* FOOTER====================================================================================================== */

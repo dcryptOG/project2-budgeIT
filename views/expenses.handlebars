@@ -8,77 +8,84 @@
 </section>
 <span class='topPad'><a href="" id='topScroll'>Top Pad</a></span>
 
-<section class='content'>
-  <div class='flex-container' id='contentPad'></div>
+<section class='content' class='flex-container'>
   <div class='flex-container' id='content'>
-    <div class='flex-container'>
-      <p>About You</p>
+
+    {{!-- calendar --}}
+    {{!-- <div class='calendar' class='flex-container'> --}}
+    <div id="calendar" class='flex-container'>
     </div>
-    <div class='flex-container' id='form-control'>
-      <div class="expense-container">
-        <div id="calendar"></div>
-        <h1>Expenses</h1>
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Cost</th>
-              <th>Date</th>
-              <th>Delete Expense</th>
-            </tr>
-          </thead>
-          <tbody>
-            <div id='statsList'>
-              <span id='statIncome'>
-                {{!-- monthly income --}}
-              </span>
-              <span id='statExpense'>
-                {{!-- total expenses --}}
-              </span>
-              <span id='statDay'>
-                {{!-- savings per day --}}
-              </span>
-              <span id='statRemainder'>
-                {{!-- amt saved after billing cycle --}}
-              </span>
-            </div>
-            <form id="expense-form">
-              <div class="form-group">
+    {{!-- </div> --}}
 
-                <label for="expense-name">Expense Name</label>
-                <input type="text" class="form-control" id="expense-name" placeholder="Enter the Name of the Expense">
-              </div>
-              <div class="form-group">
-                <label for="inputCost">Cost Name</label>
-                <input type="text" class="form-control" id="expense-cost" placeholder="Enter the Cost of the Expense">
-              </div>
+    {{!-- expense stats --}}
+    <div class="expense-container"></div>
+    <table class="flex-contaier">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Cost</th>
+          <th>Date</th>
+          <th>Delete Expense</th>
+        </tr>
+      </thead>
+      <tbody>
+        <div class='flex-container' id='statsList'>
+          <div id='statIncome'>
+            monthly income
+          </div>
+          <div id='statExpense'>
+            total expenses
+          </div>
+          <div id='statDay'>
+            savings per day
+          </div>
+          <div id='statRemainder'>
+            amt saved after billing cycle
+          </div>
+        </div>
 
-              <div class="form-group">
-                <label for="inputDate">Date</label>
-                <input type="text" class="form-control" id="expense-date" placeholder="Enter the Date of the Expense">
-              </div>
-
-              <button type="submit" class="btn btn-success">Budge It</button>
-
-            </form>
-          </tbody>
-        </table>
-      </div>
-      <div class='pad'></div>
-      <div class='flex-container'>
-        <p>Question 1: Your mind is always buzzing with unexplored ideas and plans.</p>
-      </div>
-      <div class='flex-container'>
-        <select class='scoreMenu' id='test'>
-          <option value="1">1 (Strongly Disagree)</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5 (Strongly Agree)</option>
-        </select>
-      </div>
-    </div>
-    <div class='pad'></div>
+        {{!-- expense form --}}
+        <form id="expenseForm" class='flex-container'>
+          <div class="formItem" class='flex-container'>
+            <label for="expense-name">Expense Name</label>
+            <input type="text" class="form-control" id="expense-name" placeholder="Enter the Name of the Expense">
+          </div>
+          <div class="formItem" class='flex-container'>
+            <label for="inputCost">Cost Name</label>
+            <input type="text" class="form-control" id="expense-cost" placeholder="Enter the Cost of the Expense">
+          </div>
+          <div class="formItem" class='flex-container'>
+            <label for="expense-name">Billing Cycle</label>
+            <select class='cycleType' id='test'>
+              <option value="1">30 (days)</option>
+              <option value="2">Annual (365 days)</option>
+              <option value="3">First of Each Month</option>
+            </select>
+          </div>
+          <div class="formItem" class='flex-container'>
+            <label for="inputDate">Date</label>
+            <input type="text" class="form-control" id="expense-date" placeholder="Enter the Date of the Expense">
+            <button type="submit" class="btn btn-success">Budge It</button>
+          </div>
+        </form>
+      </tbody>
+    </table>
+  </div>
+  <div class='pad'></div>
+  <div class='flex-container'>
+    <p>Question 1: Your mind is always buzzing with unexplored ideas and plans.</p>
+  </div>
+  <div class='flex-container'>
+    <select class='cycleType' id='test'>
+      <option value="1">30 (days)</option>
+      <option value="2">Annual (365 days)</option>
+      <option value="3">First of Month</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+  </div>
+  </div>
+  <div class='pad'></div>
   </div>
   <div class='flex-container' id='contentPad'></div>
 </section>
